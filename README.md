@@ -44,12 +44,12 @@ Those files should be in the same folder with `obslst.py`. You can also specify 
 
 **Example 1:**
 
-Input target coordinates, expect observing time in UTC, and expect observing length in hours. 
+Input target coordinates, expected observing time in UTC, and expected observing length in hours. 
 ```
 python obslst.py --target '05:23:48 -71:25:52' --time '2022-03-20 12:00:00' --length 12
 ```
 
-You can also input two targets
+You can also input two/multiple targets
 ```
 python obslst.py --target '05:23:48 -71:25:52' '00:58:00 -23:54:49' --time '2022-03-20 12:00:00' --length 12
 ```
