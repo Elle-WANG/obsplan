@@ -63,6 +63,10 @@ python obslst.py --time '2022-03-20 12:00:00' --length 12
 ```
 
 
+## To-do list
+
+1. can select calibrator from command line
+2. add other plots (LST range, parallactic angle, azimuth, optical etc.)
 
 
 
