@@ -31,7 +31,11 @@ def _main():
                         help='planned observing time length')
     parser.add_argument('--elimit', type=float, default=12, 
                         help='elevation limit of the horizon, Parkes is 30 deg')
-    
+    parser.add_argument('--oname', type=str, default='elevation', 
+                        help='output name')
+    parser.add_argument('--save-png', action='store_true', help='store the output pngs')
+
+
     # default file location/name
     parser.add_argument('--telefile',type=str, default='telescope.csv')
     parser.add_argument('--sourcefile', type=str, default='source.csv')
@@ -182,6 +186,9 @@ def elevation_plot(location, coords, calibrator, target_names, cal_names, values
     ax2.xaxis.set_major_formatter(date_form)
     ax2.set_xticks([t1.value, t2.value])
     
+    if values.save_png:
+        plt.savefig(values.oname+'.png', dpi=100)
+
     plt.show()
 
 
