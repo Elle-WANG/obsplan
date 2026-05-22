@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obsplan"
+version = "0.1.0"
+description = "A small observation planning tool for plotting target and calibrator elevation."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Y. Wang", email = "ywan3191@uni.sydney.edu.au" }
+]
+license = { text = "MIT" }
+keywords = ["astronomy", "observation-planning", "radio-astronomy", "astropy"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Astronomy",
+]
+dependencies = [
+  "astropy>=5",
+  "matplotlib>=3.6",
+  "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+]
+
+[project.scripts]
+obsplan = "obsplan.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["obsplan*"]
+
+[tool.setuptools.package-data]
+obsplan = ["data/*.csv"]
